@@ -1,0 +1,50 @@
+.header {
+    background: linear-gradient(to right,#cb11ab 0,#481173 100%) no-repeat;
+    
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+    }
+
+    &__search-input {
+        font-size: 18px;
+        line-height: 24px;
+        width: 100%;
+        padding: 16px 220px 16px 44px;
+        margin: 0;
+        border: 1px solid #c88ef5;
+        border-radius: 56px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    &__search-input:hover {
+        border: #c88ef5;
+        background-color: #d7aef7;
+        transition: ease-in-out 0.5s;
+    }
+    
+    ::-webkit-input-placeholder {
+        color: white;
+    }
+
+    &__search-img {
+        padding: 15px;
+    }
+
+    &__buy {
+        margin-left: auto;
+    }
+
+    &__buy-img {
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+}

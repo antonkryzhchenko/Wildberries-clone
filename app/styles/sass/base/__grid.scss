@@ -1,0 +1,6 @@
+.container {
+    padding-left: var(--mobile-padding);
+    padding-right: var(--mobile-padding);
+    max-width: calc(var(--content-width) + var(--mobile-padding) * 2);
+    margin: 0 auto;
+}

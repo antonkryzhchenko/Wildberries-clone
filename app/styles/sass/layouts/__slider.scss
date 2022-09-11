@@ -1,0 +1,74 @@
+.splide {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    &__arrow {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        border: none;
+        opacity: 0.7;
+        top: 45%;
+        z-index: 1;
+
+        &:hover {
+            opacity: 1;
+        }
+    
+        &:first-child {
+            transform: translatey(-50%) rotate(180deg);
+            left: 1%;
+        }
+    
+        &:last-child {
+            right: 1%;
+            transform: translatey(-50%);
+        }
+
+        svg path {
+            fill: #cb11ab;
+        }
+
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__pagination {
+        margin-top: 25px;
+    }
+    
+    &__pagination > li {
+        margin-right: 20px;
+    
+        &:last-child {
+        margin-right: 0;
+        }
+    }
+    
+    &__pagination > li > button {
+        display: block;
+        background: none;
+        background: #fff;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #cb11ab;
+        padding: 0;
+    
+        &.is-active {
+        background: #cb11ab;
+        }
+    }
+}
+
+.slider-img {
+    border-radius: 30px;
+}
