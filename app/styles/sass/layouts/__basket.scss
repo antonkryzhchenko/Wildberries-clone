@@ -1,0 +1,58 @@
+.basket {
+    display: none;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 400px;
+    height: auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    z-index: 1;
+    
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .basket-close {
+        color: #cb11ab;
+        font-size: 48px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    &__title-text {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    &__title-btn {
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        background-color: #cb11ab;
+    }
+
+    &__title-btn:hover {
+        opacity: 0.7;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+    }
+
+    &__content-title {
+        padding: 5px;
+        margin-right: 10px;
+    }
+
+    &__content-cost {
+        padding: 5px;
+        margin-left: 10px;
+    }
+}

@@ -3,6 +3,7 @@ import {Splide} from '@splidejs/splide';
 document.addEventListener('DOMContentLoaded', () => {
 
 // Slider Start
+
     const splideSettings = {
         type: "loop",
         gap: "40px",
@@ -30,9 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
 const api = 'https://6318bbd2f6b281877c7515fc.mockapi.io/Wildberries-clone';
 const cards = document.querySelector('#cards');
 const search = document.querySelector('#search');
-const modalWindow = document.getElementById('#modal-window');
-const closeBtn = document.getElementsByClassName('modal-close')[0];
+const basket = document.querySelector('#chip-basket');
+const modalWindow = document.querySelector('#modal-window');
+const modalImg = document.querySelector('.modal__content-img');
+const modalTitle = document.querySelector('.modal__content-title');
+const modalText = document.querySelector('.modal__content-text');
+const modalClose = document.querySelector('#modal-close');
+const modalBasket = document.querySelector('#modal-basket');
+const basketClose = document.querySelector('#basket-close');
 let products = JSON.parse(localStorage.getItem('products')) ?? [];
+let cardsArray = [];
+
+basket.addEventListener('click', () => {
+    modalBasket.style.display = 'block';
+});
+
+basketClose.addEventListener('click', () => {
+    modalBasket.style.display = 'none';
+})
 
 function saveData(data) {
     localStorage.setItem('products', JSON.stringify(data));
@@ -45,6 +61,7 @@ if (products.length === 0) {
             products = data;
             saveData(products);
             renderCard(products);
+            modalRender(products);
             console.log(products);
         })
 }
@@ -80,17 +97,8 @@ function cardCreate(products) {
         <p class="products__cards-text card-text">$${products.cost}</p>
         <a href="#" class="products__cards-btn btn btn-primary">Добавить в корзину</a>
     </div>
-    </div>
-    
-    <div id="modal-window" class="modal">
-    <span class="modal-close">&times;</span>
-    <div class="modal__content">
-        <img src="${products.avatar}" alt="picture" class="modal__content-img">
-        <h5 class="modal__content-title">${products.description}</h5>
-        <p class="modal__content-text">$${products.cost}</p>
-    </div>
-</div>`;
-}
+    </div>`;
+};
 
 if (products.length) {
     renderCard(products);
@@ -98,9 +106,9 @@ if (products.length) {
 
 cards.addEventListener('click', () => {
     modalWindow.style.display = 'block';
-});
+}); 
 
-closeBtn.addEventListener('click', () => {
+modalClose.addEventListener('click', () => {
     modalWindow.style.display = 'none';
 });
 
